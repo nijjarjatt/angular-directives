@@ -1,4 +1,19 @@
-<div>
-<p>User Name:  {{user.name}}</p>
-<p>User Address: {{user.address}}</p>
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel panel-heading">
+			{{user.name}}
+		</div>
+		<div class="panel panel-body">
+			<div ng-show="user.address">
+				<h4>Address</h4> 
+				{{user.address}}
+			</div>
+			<div style="margin-top: 30px">
+				<p ng-show="user.tag">Tagged</p>
+				<button class="btn btn-primary" ng-show="!user.tag" ng-click="tagUser(user)">
+					Tag Me
+				</button>
+			</div>
+		</div>
+	</div>
 </div>
