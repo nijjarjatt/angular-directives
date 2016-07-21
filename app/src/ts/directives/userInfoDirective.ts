@@ -6,10 +6,14 @@ export class UserInfoDirective implements ng.IDirective {
         user: '='
     };
     controller = ($scope: any) => {
+        $scope.collapsed = false;
         $scope.tagUser = (user:any) => {
             user.tag = true;
         }
-        console.log($scope);
+
+        $scope.collapse = () => {
+            $scope.collapsed = !$scope.collapsed;
+        }
     };
 
     constructor() {

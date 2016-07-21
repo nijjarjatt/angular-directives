@@ -7,5 +7,6 @@ let app = angular.module('dirApp', []);
 
 app
 	.controller('appCtrl', controllers.AppCtrl)
-	.directive('userInfo', directives.UserInfoDirective.factory());
+	.directive('userInfo', directives.UserInfoDirective.factory())
+	.directive('address', directives.AddressDirective.factory());
 

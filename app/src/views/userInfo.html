@@ -1,14 +1,10 @@
 <div class="container">
 	<div class="panel panel-primary">
-		<div class="panel panel-heading">
+		<div class="panel panel-heading" ng-click="collapse()">
 			{{user.name}}
 		</div>
-		<div class="panel panel-body">
-			<div ng-show="user.address">
-				<h4>Address</h4> 
-				{{user.address.street}}<br />
-				{{user.address.city}}, {{user.address.province}}
-			</div>
+		<div class="panel panel-body" ng-show="!collapsed">
+			<address></address>
 			<div ng-show="user.friends" style="margin-top: 20px">
 				<h4>Friends</h4> 
 				<ul>

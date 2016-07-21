@@ -34,7 +34,5 @@ export class AppCtrl{
 				'Jim'
 			]
 		};
-
-		console.log(this.$scope);
 	}
 }
