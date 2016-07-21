@@ -2,10 +2,12 @@ export class UserInfoDirective implements ng.IDirective {
     restrict = 'E';
     templateUrl = './views/userInfo.html';
     replace= true;
+    scope= true;
     controller = ($scope: any) => {
         $scope.tagUser = (user:any) => {
             user.tag = true;
         }
+        console.log($scope);
     };
 
     constructor() {

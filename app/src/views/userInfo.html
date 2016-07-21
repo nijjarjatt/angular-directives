@@ -6,9 +6,19 @@
 		<div class="panel panel-body">
 			<div ng-show="user.address">
 				<h4>Address</h4> 
-				{{user.address}}
+				{{user.address.street}}<br />
+				{{user.address.city}}, {{user.address.province}}
 			</div>
-			<div style="margin-top: 30px">
+			<div ng-show="user.friends" style="margin-top: 20px">
+				<h4>Friends</h4> 
+				<ul>
+					<li ng-repeat="friend in user.friends">
+						{{friend}}
+					</li>
+				</ul>
+
+			</div>
+			<div style="margin-top: 20px">
 				<p ng-show="user.tag">Tagged</p>
 				<button class="btn btn-primary" ng-show="!user.tag" ng-click="tagUser(user)">
 					Tag Me

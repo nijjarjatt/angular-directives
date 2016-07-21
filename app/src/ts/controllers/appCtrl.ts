@@ -8,7 +8,18 @@ export class AppCtrl{
 	constructor(protected $scope: IAppCttrlScope){
 		this.$scope.user = {
 			name: 'Bob Marley',
-			address: '12 ABC Street'
+			address: {
+				street: '123 Abc Boulevard',
+				city: 'Orlando',
+				province: 'FL'
+			},
+			friends: [
+				'Rob',
+				'Luc',
+				'Jim'
+			]
 		};
+
+		console.log(this.$scope);
 	}
 }
