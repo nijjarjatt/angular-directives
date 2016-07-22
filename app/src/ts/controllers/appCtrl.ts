@@ -1,8 +1,10 @@
 export interface IAppCtrlScope extends ng.IScope{
 	messages: any;
+	clickMessage: any;
 	user1: any;
 	user2: any;
 	handlePause(e: any): void;
+	handleClick(message: any): void;
 }
 
 export class AppCtrl{
@@ -10,6 +12,9 @@ export class AppCtrl{
 
 	constructor(protected $scope: IAppCtrlScope){
 		this.$scope.messages= [];
+		this.$scope.clickMessage = {
+			data: 'I have not been clicked'
+		};
 		this.$scope.user1 = {
 			name: 'Bob Marley',
 			address: {
@@ -23,7 +28,6 @@ export class AppCtrl{
 				'Jim'
 			]
 		};
-
 		this.$scope.user2 = {
 			name: 'Rob Smith',
 			address: {
@@ -43,5 +47,9 @@ export class AppCtrl{
 			console.log('Video Paused');
 			console.log(e);
 		}
+
+		this.$scope.handleClick = (message: any) => {
+			message.data = 'I have been clicked!';
+		} 
 	}
 }

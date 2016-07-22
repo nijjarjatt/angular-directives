@@ -11,18 +11,21 @@
 </head>
 <body ng-app="dirApp">
 	<div ng-controller="appCtrl">
-		<user-info user="user1" collapsed="false"></user-info>
-		<user-info user="user2"  collapsed="true"></user-info>
+		<div custom-click = "handleClick(clickMessage)">
+			{{clickMessage.data}}
+		</div>
 
 		<video id="vid1" controls preload="none" space-controlled event-paused="handlePause(evt)">
 		  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
 		  <source src="http://www.w3schools.com/html/movie.ogg" type="video/ogg">
 		  Your browser does not support the video tag.
-		</video>
-
+		</video>		
 		<ul>
 			<li ng-repeat="message in messages">{{message.text}}</li>
 		</ul>
+
+		<user-info user="user1" collapsed="false"></user-info>
+		<user-info user="user2"  collapsed="true"></user-info>
 	</div>
 </body>
 </html>
