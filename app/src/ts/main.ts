@@ -13,5 +13,6 @@ app
 	.directive('removeFriend', directives.RemoveFriendDirective.factory())
 	.directive('spaceControlled', directives.SpaceSupportDirective.factory())	
 	.directive('eventPaused', directives.EventPausedDirective.factory())		
-	.directive('customClick', directives.CustomClickDirective.factory());
+	.directive('customClick', directives.CustomClickDirective.factory())	
+	.directive('stateDisplay', directives.StateDisplayDirective.factory());
 

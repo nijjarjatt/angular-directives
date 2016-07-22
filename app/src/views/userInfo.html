@@ -3,7 +3,7 @@
 		<div class="panel panel-heading" ng-click="collapse()">
 			{{user.name}}
 		</div>
-		<div class="panel panel-body" ng-show="!collapsed">
+		<div class="panel panel-body" ng-show="!collapsed" state-display="user.level red yellow orange">
 			<address></address>
 			<div ng-show="user.friends" style="margin-top: 20px">
 				<h4>Friends</h4> 

@@ -7,29 +7,6 @@ export class UserInfoDirective implements ng.IDirective {
         initalCollapsed: '@collapsed'
     };
 
-    link = (scope: any, el: any, attrs: any) => {
-        scope.nextState = () => {  
-            scope.user.level++; 
-            scope.user.level = scope.user.level % 3;
-            setState();   
-        }
-
-        var setState = () => {
-            switch(scope.user.level){
-                case 0:
-                    el.find('.panel-body').css('background-color', 'yellow');
-                break;
-                case 1:
-                    el.find('.panel-body').css('background-color', 'red');
-                break;
-                case 2:
-                    el.find('.panel-body').css('background-color', 'blue');
-                break;
-            }
-        }
-        setState();
-    }
-
     controller = ($scope: any) => {
         $scope.collapsed = ($scope.initalCollapsed === 'true');
         $scope.dummy = 'Dummy Data';
@@ -47,6 +24,11 @@ export class UserInfoDirective implements ng.IDirective {
             if(idx> -1){
                 $scope.user.friends.splice(idx,1);
             }
+        }
+
+        $scope.nextState = () => {  
+            $scope.user.level++; 
+            $scope.user.level = $scope.user.level % 3; 
         }
     };
 
