@@ -3,10 +3,11 @@ export class UserInfoDirective implements ng.IDirective {
     templateUrl = './views/userInfo.html';
     replace= true;
     scope= {
-        user: '='
+        user: '=',
+        initalCollapsed: '@collapsed'
     };
     controller = ($scope: any) => {
-        $scope.collapsed = false;
+        $scope.collapsed = ($scope.initalCollapsed === 'true');
         $scope.tagUser = (user:any) => {
             user.tag = true;
         }
