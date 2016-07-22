@@ -2,7 +2,7 @@ export interface IAppCtrlScope extends ng.IScope{
 	messages: any;
 	user1: any;
 	user2: any;
-	handlePause(): void;
+	handlePause(e: any): void;
 }
 
 export class AppCtrl{
@@ -38,9 +38,10 @@ export class AppCtrl{
 			]
 		};
 
-		this.$scope.handlePause = () => {
+		this.$scope.handlePause = (e: any) => {
 			this.$scope.messages.push({text: 'Paused!'});
 			console.log('Video Paused');
+			console.log(e);
 		}
 	}
 }

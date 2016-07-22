@@ -1,22 +1,20 @@
-export class EventPausedDirective implements ng.IDirective {
+export class EventPausedDirective implements ng.IDirective {	
+
+    constructor(private $parse: ng.IParseService) {
+    }
+
 	link = (scope: any, el: any, attrs: any) => {
-		el.on('pause', function(e: any){
-			scope.$apply(function(){
-				scope.eventPaused();
+		var fn = this.$parse(attrs['eventPaused']);
+		el.on('pause', (e: any) => {			
+			scope.$apply(() => {
+				fn(scope, {evt: event})
 			});
 		})
 	}
 
-    constructor() {
-    }
-
-    scope = {
-    	eventPaused: '&'
-    }
-
     static factory(): ng.IDirectiveFactory {
-        const directive = () => new EventPausedDirective();
-        directive.$inject = [];
+        const directive = ($parse: ng.IParseService) => new EventPausedDirective($parse);
+        directive.$inject = ['$parse'];
 
         return directive;
     }
