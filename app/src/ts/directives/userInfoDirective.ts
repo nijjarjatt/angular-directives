@@ -19,7 +19,6 @@ export class UserInfoDirective implements ng.IDirective {
         }
 
         $scope.removeFriend = (friend: any) => {
-            console.log('F');
             let idx = $scope.user.friends.indexOf(friend);
             if(idx> -1){
                 $scope.user.friends.splice(idx,1);
