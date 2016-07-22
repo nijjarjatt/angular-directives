@@ -26,7 +26,8 @@ export class AppCtrl{
 				'Rob',
 				'Luc',
 				'Jim'
-			]
+			],
+			level: 1
 		};
 		this.$scope.user2 = {
 			name: 'Rob Smith',
@@ -39,7 +40,8 @@ export class AppCtrl{
 				'Bob',
 				'Luc',
 				'Jim'
-			]
+			],
+			level: 0
 		};
 
 		this.$scope.handlePause = (e: any) => {
