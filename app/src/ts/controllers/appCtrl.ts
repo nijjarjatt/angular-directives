@@ -1,12 +1,15 @@
 export interface IAppCtrlScope extends ng.IScope{
+	messages: any;
 	user1: any;
 	user2: any;
+	handlePause(): void;
 }
 
 export class AppCtrl{
 	static $inject = ['$scope'];
 
 	constructor(protected $scope: IAppCtrlScope){
+		this.$scope.messages= [];
 		this.$scope.user1 = {
 			name: 'Bob Marley',
 			address: {
@@ -34,5 +37,10 @@ export class AppCtrl{
 				'Jim'
 			]
 		};
+
+		this.$scope.handlePause = () => {
+			this.$scope.messages.push({text: 'Paused!'});
+			console.log('Video Paused');
+		}
 	}
 }

@@ -7,8 +7,10 @@ let app = angular.module('dirApp', []);
 
 app
 	.controller('appCtrl', controllers.AppCtrl)
+	
 	.directive('userInfo', directives.UserInfoDirective.factory())
 	.directive('address', directives.AddressDirective.factory())
 	.directive('removeFriend', directives.RemoveFriendDirective.factory())
-	.directive('spaceControlled', directives.SpaceSupportDirective.factory());
+	.directive('spaceControlled', directives.SpaceSupportDirective.factory())	
+	.directive('eventPaused', directives.EventPausedDirective.factory());
 
