@@ -8,5 +8,6 @@ let app = angular.module('dirApp', []);
 app
 	.controller('appCtrl', controllers.AppCtrl)
 	.directive('userInfo', directives.UserInfoDirective.factory())
-	.directive('address', directives.AddressDirective.factory());
+	.directive('address', directives.AddressDirective.factory())
+	.directive('removeFriend', directives.RemoveFriendDirective.factory());
 

@@ -8,12 +8,22 @@ export class UserInfoDirective implements ng.IDirective {
     };
     controller = ($scope: any) => {
         $scope.collapsed = ($scope.initalCollapsed === 'true');
+        $scope.dummy = 'Dummy Data';
+
         $scope.tagUser = (user:any) => {
             user.tag = true;
         }
 
         $scope.collapse = () => {
             $scope.collapsed = !$scope.collapsed;
+        }
+
+        $scope.removeFriend = (friend: any) => {
+            console.log('F');
+            let idx = $scope.user.friends.indexOf(friend);
+            if(idx> -1){
+                $scope.user.friends.splice(idx,1);
+            }
         }
     };
 
