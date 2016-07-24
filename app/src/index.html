@@ -11,6 +11,15 @@
 </head>
 <body ng-app="dirApp">
 	<div ng-controller="appCtrl">
+		<h1>Transclusion</h1>
+		<content-box>
+			Content
+			<!---- The binding inside the transcluded directive skips the protypical chain of directive $scope object and stays with the parent controller as a best practice, so that the data doesn`t get overwritten by the transcluded directive. So, as a best practive the trnasluded directive should have atleast inherited scope if not isolated scope (i.e inherited or isolated but not shared)
+			---->
+			<div>{{message}}</div>
+		</content-box>
+
+		<h1>Decorative Directives</h1>
 		<div custom-click = "handleClick(clickMessage)">
 			{{clickMessage.data}}
 		</div>
@@ -24,6 +33,7 @@
 			<li ng-repeat="message in messages">{{message.text}}</li>
 		</ul>
 
+		<h1>Component Directives</h1>
 		<user-info user="user1" collapsed="false"></user-info>
 		<user-info user="user2"  collapsed="true"></user-info>
 	</div>

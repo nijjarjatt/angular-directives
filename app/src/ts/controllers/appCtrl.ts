@@ -5,16 +5,19 @@ export interface IAppCtrlScope extends ng.IScope{
 	user2: any;
 	handlePause(e: any): void;
 	handleClick(message: any): void;
+	message: string;
 }
 
 export class AppCtrl{
 	static $inject = ['$scope'];
 
 	constructor(protected $scope: IAppCtrlScope){
+		console.log(this.$scope);
 		this.$scope.messages= [];
 		this.$scope.clickMessage = {
 			data: 'I have not been clicked'
 		};
+		this.$scope.message = 'Transclusion message from app controller';
 		this.$scope.user1 = {
 			name: 'Bob Marley',
 			address: {
